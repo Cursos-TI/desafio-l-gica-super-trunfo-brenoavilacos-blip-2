@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+/*
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
@@ -115,13 +116,10 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    
+    // Nivel Aventureiro
+    // O objetivo dese nível é implementar estruturas de decisão simples.
+    // Nesta área serão realizadas as comparações entre todos os atributos das duas cartas.
 
     if (populacao1 > populacao2){
         printf("Populacação: A carta 1 venceu.\n");
@@ -165,5 +163,69 @@ int main() {
         printf("Super poder: A carta 2 venceu.\n");
     } 
 
+*/
+    //Nesta etapa criaremos os menus interativos que permitirão que os usuários escolham os atributos das cartas a serem comparados.
+    // Implementarei estruturas de decisão compostas, encadeadas e aninhadas.
+    // Usarei a feramenta switch e comparações aninhadas com if else e else if.
+    
+    int main(){
+    
+    char estado1= "A", codigo1[4]= "A01", cidade1[30] = "Ipatinga";
+    unsigned long int populacao1 = 250000;
+    float area1 = 15000000, pib1 = 2500000000 , super_poder1, densidade1, pibpercapta1, inverso_densidade1;
+    int pontos1 = 25, opcao, escolhaCarta, escolhaAtributo;
+  
+    char estado2 = "B", codigo2[4] = "B01", cidade2[30] = "Timóteo";
+    unsigned long int populacao2 = 150000;
+    float area2 = 10000000, pib2 = 1500000000, super_poder2, densidade2, pibpercapta2, inverso_densidade2;
+    int pontos2 = 15;
+
+    float resultado_populacao, resultado_area, populacao_pip, resultado_dendidade, resultado_pippercapta, resultado_inversodensidade, resultado_pontos;
+  
+    // Descrição das funções de calculo da densidade populacional, PIB per capta e o cálculo do super poder
+
+    densidade1 = populacao1 / area1;
+    densidade2 = populacao2 / area2;
+    pibpercapta1 = pib1 / populacao1;
+    pibpercapta2 = pib2 / populacao2;
+  
+    inverso_densidade1 = 1.0 / densidade1;
+    inverso_densidade2 = 1.0 / densidade2;
+  
+    super_poder1 = (float) populacao1 + (float)area1 + (float)pib1 + (float)pontos1 +  (float)pibpercapta1 + (float)densidade1, (float)inverso_densidade1;
+    super_poder2 = (float) populacao2 + (float)area2 + (float)pib2 + (float)pontos2 +  (float)pibpercapta2 + (float)densidade2 + (float)inverso_densidade2;
+
+    int escolha;
+    printf("*** Jogo de Super-Trunfo - Cidades ***\n");
+    printf("*** Seja bem vindo ao jogo ***\n");
+    printf("*** Escolha uma opção: ***\n");
+    printf("1 - Iniciar jogo.\n");
+    printf("2 - Regras do jogo.\n");
+    printf("3 - Encerrar o jogo.\n");
+    printf("Escolha: \n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        if (opcao == 1){
+            printf("Dentre as cartas abaixo, escolha um atributo para jogar: \n");
+            printf("1 - Polulação\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Desdidade Populacional\n ");
+            printf("5 - PIB per capta\n");
+            printf("7 - Super poder\n");
+            scanf("%d", &escolhaAtributo);
+            break;
+        }else{
+            printf("Escolha inválida! Tente novamente.\n");
+        }
+
+        if (escolhaCarta = 1){}
+        default:
+            break;
+        }
 return 0;
 }

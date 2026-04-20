@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 /*
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
@@ -168,14 +169,14 @@ int main() {
     // Implementarei estruturas de decisão compostas, encadeadas e aninhadas.
     // Usarei a feramenta switch e comparações aninhadas com if else e else if.
     
-    int main(){
+int main(){
     
-    char estado1= "A", codigo1[4]= "A01", cidade1[30] = "Ipatinga";
+    char estado1= 'A', codigo1[4]= "A01", cidade1[30] = "Ipatinga";
     unsigned long int populacao1 = 250000;
     float area1 = 15000000, pib1 = 2500000000 , super_poder1, densidade1, pibpercapta1, inverso_densidade1;
     int pontos1 = 25, opcao, escolhaCarta, escolhaAtributo;
   
-    char estado2 = "B", codigo2[4] = "B01", cidade2[30] = "Timóteo";
+    char estado2 = 'B', codigo2[4] = "B01", cidade2[30] = "Timóteo";
     unsigned long int populacao2 = 150000;
     float area2 = 10000000, pib2 = 1500000000, super_poder2, densidade2, pibpercapta2, inverso_densidade2;
     int pontos2 = 15;
@@ -208,24 +209,91 @@ int main() {
     switch (opcao)
     {
     case 1:
+
         if (opcao == 1){
-            printf("Dentre as cartas abaixo, escolha um atributo para jogar: \n");
+            printf("Dentre as opções abaixo, escolha um atributo para jogar: \n");
             printf("1 - Polulação\n");
             printf("2 - Área\n");
             printf("3 - PIB\n");
             printf("4 - Pontos Turísticos\n");
-            printf("5 - Desdidade Populacional\n ");
-            printf("5 - PIB per capta\n");
+            printf("5 - Desdidade Populacional\n");
+            printf("6 - PIB per capta\n");
             printf("7 - Super poder\n");
             scanf("%d", &escolhaAtributo);
-            break;
-        }else{
-            printf("Escolha inválida! Tente novamente.\n");
+            printf("Escolha uma carta: 1 ou 2:");
+            scanf("%d", &escolhaCarta);
+            if (escolhaCarta == 1 || escolhaCarta == 2){
+                if (escolhaAtributo == 1){
+                    if (populacao1 > populacao2){
+                        printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+            }   else if (escolhaAtributo == 2){
+                    if (area1 > area2){
+                        printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+            }   else if (escolhaAtributo == 3){
+                    if (pib1 > pib2){
+                        printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+            }    else if (escolhaAtributo == 4){
+                    if (pontos1 > pontos2){
+                        printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+            }   else if (escolhaAtributo == 5){
+                    if (densidade1 < densidade2){
+                        printf("carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+            }   else if (escolhaAtributo == 6){
+                    if (pibpercapta1 > pibpercapta2){
+                    printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 Venceu!\n");
+                    }
+            }   else if (escolhaAtributo == 7){
+                    if (super_poder1 > super_poder2){
+                        printf("Carta 1 venceu!\n");
+                    } else{
+                        printf("Carta 2 venceu!\n");
+                    }
+                }else{
+                    printf("Escolha inválida! Tente novamente.\n");
+                }
+            
+            }else{
+                printf("Escolha inválida! Tente novamente.\n");
         }
+        break;
+    case 2:
+   
+            printf("O jogo consiste em comparar os atributos de duas cartas contendo as informações a respeito de duas cidades.\n");
+            printf("As cidades possuem os seguines aributos: Estado, Código da carta, Nome da cidade, Polulação, Área, PIB, Número de pontos turisticos, Densidade populacional, PIB per capta e Super poder\n");
+            printf("***As regras do jogo são: ***\n");
+            printf("Primeiro escolhemos o atributo a ser comparado.\n");
+            printf("Em seguida escolhemos qual a carta. Ex: Carta 1 ou Carta 2 (digitando o número dela).\n");
+            printf("A carta vencedora será exibida após a comparação.\n");
+            break;
+            
+    case 3:
+        if (opcao ==3){
+            printf("Fim de jogo!\n");
+            printf("Obrigado por jogar.\n");
+            break;
 
-        if (escolhaCarta = 1){}
-        default:
-            break;
         }
+    default:
+        printf("Escolha inválida! Tente novamente.\n");
+        break;
+    }
 return 0;
+}
 }
